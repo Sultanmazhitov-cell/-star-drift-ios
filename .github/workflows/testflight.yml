@@ -105,13 +105,16 @@ jobs:
           if profile['ExpirationDate'].replace(tzinfo=datetime.timezone.utc) <= datetime.datetime.now(datetime.timezone.utc):
               raise SystemExit('Provisioning profile has expired.')
           profile_uuid = str(uuid.UUID(profile['UUID'])).upper()
-          installed = Path.home() / 'Library/MobileDevice/Provisioning Profiles' / (profile_uuid + '.mobileprovision')
+          installed = Path.home() / 'Library/Developer/Xcode/UserData/Provisioning Profiles' / (profile_uuid + '.mobileprovision')
+          legacy_installed = Path.home() / 'Library/MobileDevice/Provisioning Profiles' / (profile_uuid + '.mobileprovision')
           with open(os.environ['GITHUB_ENV'], 'a') as output:
               output.write('PROFILE_UUID=' + profile_uuid + '\n')
               output.write('INSTALLED_PROFILE_PATH=' + str(installed) + '\n')
-          installed.parent.mkdir(parents=True, exist_ok=True)
-          installed.write_bytes((folder / 'profile.mobileprovision').read_bytes())
-          installed.chmod(0o600)
+              output.write('LEGACY_INSTALLED_PROFILE_PATH=' + str(legacy_installed) + '\n')
+          for destination in [installed, legacy_installed]:
+              destination.parent.mkdir(parents=True, exist_ok=True)
+              destination.write_bytes((folder / 'profile.mobileprovision').read_bytes())
+              destination.chmod(0o600)
           options = {
               'method': 'app-store-connect',
               'destination': 'export',
@@ -193,6 +196,9 @@ jobs:
           security delete-keychain "$RUNNER_TEMP/star-drift-signing/signing.keychain-db" 2>/dev/null
           if [[ -n "${INSTALLED_PROFILE_PATH:-}" ]]; then
             rm -f "$INSTALLED_PROFILE_PATH"
+          fi
+          if [[ -n "${LEGACY_INSTALLED_PROFILE_PATH:-}" ]]; then
+            rm -f "$LEGACY_INSTALLED_PROFILE_PATH"
           fi
           rm -rf "$RUNNER_TEMP/star-drift-signing" "$RUNNER_TEMP/StarDrift.xcarchive" \
             "$RUNNER_TEMP/star-drift-derived-data" "$RUNNER_TEMP/star-drift-export"
