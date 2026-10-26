@@ -10,3 +10,7 @@ xcuserdata/
 *.mobileprovision
 *.p8
 ExportOptions.local.plist
+android/.gradle/
+android/app/build/
+android/local.properties
+android/*.apk

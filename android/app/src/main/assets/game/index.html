@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101e2b">
+  <meta name="description" content="Звёздный рейс — маленькая космическая аркада. Управляйте кораблём, собирайте звёзды и уворачивайтесь от метеоритов.">
+  <title>Звёздный рейс — космическая аркада</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="android.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="Звёздный рейс — на главную"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 1 20 12 31 16 20 20 16 31 12 20 1 16 12 12Z" fill="currentColor"/></svg>ОРБИТА<span class="brand-slash">/</span><span class="brand-secondary">ИГРАЕМ</span></a>
+    <a class="help-link" href="#instructions">Как играть <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 15 15 5M5 5h10v10"/></svg></a>
+  </header>
+  <main>
+    <div class="intro">
+      <div><p class="eyebrow"><span></span> МАЛЕНЬКОЕ КОСМИЧЕСКОЕ ПРИКЛЮЧЕНИЕ</p><h1>Звёздный рейс<span class="title-dot">.</span></h1><p class="intro-description">Лови звёзды. Обходи метеориты. Найди свою орбиту.</p></div>
+      <div class="edition"><span class="orbit-mark" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M24 4v40M4 24h40M10 10l28 28M10 38l28-28"/></svg></span><span>БЕСКОНЕЧНЫЙ КОСМОС<br><b>ТВОЙ НОВЫЙ РЕКОРД</b></span></div>
+    </div>
+    <section class="game-shell" aria-label="Игра Звёздный рейс">
+      <div class="flight-deck">
+        <div class="game-toolbar"><span class="sector"><i></i> СЕКТОР 07 <span class="sector-sub">/ ОТКРЫТЫЙ КОСМОС</span></span><div class="toolbar-actions"><button id="soundButton" class="icon-button" type="button" aria-label="Включить звук" aria-pressed="false" title="Звук"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 4 5 7H2v6h3l4 3V4Z"/><path d="m13 7 5 6m0-6-5 6"/></svg></button><button id="pauseButton" class="icon-button" type="button" aria-label="Пауза" title="Пауза (P)"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="3" height="12" rx="1"/><rect x="12" y="4" width="3" height="12" rx="1"/></svg></button></div></div>
+        <div class="canvas-wrap">
+          <canvas id="gameCanvas" tabindex="0" aria-label="Игровое поле. Стрелки или WASD — управление кораблём, P — пауза. На телефоне ведите пальцем по полю."></canvas>
+          <div id="gameOverlay" class="game-overlay">
+            <div class="launch-symbol" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><ellipse cx="32" cy="32" rx="29" ry="12" transform="rotate(-35 32 32)" stroke="currentColor" stroke-opacity=".4"/><path d="m32 12 12 32-12-6-12 6 12-32Z" fill="#dceef0"/><path d="m32 21 4 13h-8l4-13Z" fill="#62c4c2"/><path d="m28 43 4 10 4-10" fill="#ff8c59"/></svg></div>
+            <p id="overlayEyebrow" class="overlay-eyebrow">КАПИТАН, ВСЁ ГОТОВО</p>
+            <h2 id="overlayTitle">До звёзд —<br>один старт.</h2>
+            <p id="overlayDescription">Три жизни. Целая вселенная.<br>Как далеко ты сможешь улететь?</p>
+            <button id="startButton" class="start-button" type="button">Начать полёт <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 15 15 5M5 5h10v10"/></svg></button>
+            <span class="overlay-hint">или нажми пробел</span>
+          </div>
+          <div class="canvas-caption" aria-hidden="true"><span>↔ СВОБОДНЫЙ ПОЛЁТ</span><span>07 : ∞</span></div>
+        </div>
+      </div>
+      <aside class="mission-panel" aria-label="Показатели полёта">
+        <div class="panel-heading"><span>БОРТОВОЙ ЖУРНАЛ</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="M10 0v5m0 10v5M0 10h5m10 0h5"/></svg></div>
+        <div class="score-block"><span class="stat-label">ТВОЙ СЧЁТ</span><strong id="scoreValue">0</strong><span class="score-unit">космических очков</span></div>
+        <div class="best-row"><span><span class="small-star">✦</span> Личный рекорд</span><strong id="bestValue">0</strong></div>
+        <div class="panel-rule"></div>
+        <div class="status-row"><span class="stat-label">ЩИТЫ КОРАБЛЯ</span><span id="livesValue" class="lives" aria-live="polite">♥ ♥ ♥</span></div>
+        <div class="status-row"><span class="stat-label">ВРЕМЯ В ПОЛЁТЕ</span><strong id="timeValue" class="flight-time">00:00</strong></div>
+        <div class="mission-tip"><span class="tip-icon" aria-hidden="true">✦</span><p>Каждая звезда —<br><strong>ещё 50 очков.</strong></p></div>
+        <div class="panel-bottom"><span class="transmission"></span> СВЯЗЬ С ЗЕМЛЁЙ ЕСТЬ</div>
+      </aside>
+    </section>
+    <section id="instructions" class="instructions" aria-label="Как играть">
+      <div class="instruction"><span class="instruction-number">01</span><div><h3>Возьми управление</h3><p><kbd>←</kbd> <kbd>↑</kbd> <kbd>↓</kbd> <kbd>→</kbd> или WASD. На телефоне — веди пальцем под ракетой.</p></div></div>
+      <div class="instruction"><span class="instruction-number">02</span><div><h3>Собирай сияние</h3><p>Лови золотые звёзды и увеличивай счёт.</p></div></div>
+      <div class="instruction"><span class="instruction-number">03</span><div><h3>Береги свой корабль</h3><p>Обходи метеориты. <kbd>P</kbd> — передохнуть.</p></div></div>
+    </section>
+  </main>
+  <footer><span>Немного космоса посреди обычного дня.</span><span>УДАЧНОГО ПОЛЁТА <span class="footer-star"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M24 4v40M4 24h40M10 10l28 28M10 38l28-28"/></svg></span></span></footer>
+  <script type="module" src="game.js?v=relative-controls-1"></script>
+</body>
+</html>
