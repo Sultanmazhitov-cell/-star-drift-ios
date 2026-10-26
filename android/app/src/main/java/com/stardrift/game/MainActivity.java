@@ -1,6 +1,5 @@
 package com.stardrift.game;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.graphics.Color;
 import android.net.Uri;
@@ -13,9 +12,11 @@ import android.view.WindowInsets;
 import android.view.View;
 import android.widget.FrameLayout;
 import androidx.webkit.WebViewAssetLoader;
+import androidx.activity.ComponentActivity;
+import androidx.activity.OnBackPressedCallback;
 import java.io.ByteArrayInputStream;
 
-public final class MainActivity extends Activity {
+public final class MainActivity extends ComponentActivity {
     private WebView game;
 
     @Override public void onCreate(Bundle state) {
@@ -57,6 +58,9 @@ public final class MainActivity extends Activity {
             }
         });
         game.loadUrl("https://appassets.androidplatform.net/assets/game/index.html");
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override public void handleOnBackPressed() { requestExit(); }
+        });
     }
 
     @Override protected void onPause() {
@@ -68,7 +72,7 @@ public final class MainActivity extends Activity {
         super.onResume();
         if (game != null) game.onResume();
     }
-    @Override public void onBackPressed() {
+    private void requestExit() {
         game.evaluateJavascript("window.StarDrift && window.StarDrift.pause();", null);
         new android.app.AlertDialog.Builder(this).setTitle("Завершить полёт?")
             .setMessage("Вернуться к игре или закрыть приложение?")
