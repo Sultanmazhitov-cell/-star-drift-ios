@@ -32,9 +32,13 @@ final class FlightUITests: XCTestCase {
         let sound = app.switches["toggle-sound"]
         XCTAssertTrue(sound.waitForExistence(timeout: 5))
         let previousValue = try XCTUnwrap(sound.value as? String)
-        sound.tap()
+        saveScreenshot("04-settings-before", from: app)
+        // SwiftUI exposes the whole Form row as a switch; its center is the
+        // label area. Tap the actual trailing control rather than the row.
+        sound.coordinate(withNormalizedOffset: CGVector(dx: 0.94, dy: 0.5)).tap()
         XCTAssertTrue(waitUntil { (sound.value as? String) != previousValue }, "The sound preference changes.")
-        sound.tap()
+        saveScreenshot("05-settings-sound-changed", from: app)
+        sound.coordinate(withNormalizedOffset: CGVector(dx: 0.94, dy: 0.5)).tap()
         XCTAssertTrue(waitUntil { (sound.value as? String) == previousValue }, "The test restores the sound preference.")
 
         app.buttons["close-settings"].tap()
