@@ -1,0 +1,58 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+		000000000000000000000064 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StarDriftApp.swift"; sourceTree = "<group>"; };
+		0000000000000000000000C8 = { isa = PBXBuildFile; fileRef = 000000000000000000000064; };
+		000000000000000000000065 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameModel.swift"; sourceTree = "<group>"; };
+		0000000000000000000000C9 = { isa = PBXBuildFile; fileRef = 000000000000000000000065; };
+		000000000000000000000066 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameView.swift"; sourceTree = "<group>"; };
+		0000000000000000000000CA = { isa = PBXBuildFile; fileRef = 000000000000000000000066; };
+		000000000000000000000067 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene.swift"; sourceTree = "<group>"; };
+		0000000000000000000000CB = { isa = PBXBuildFile; fileRef = 000000000000000000000067; };
+		000000000000000000000068 = { isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets.xcassets"; sourceTree = "<group>"; };
+		0000000000000000000000CC = { isa = PBXBuildFile; fileRef = 000000000000000000000068; };
+		000000000000000000000069 = { isa = PBXFileReference; lastKnownFileType = text.xml; path = "PrivacyInfo.xcprivacy"; sourceTree = "<group>"; };
+		0000000000000000000000CD = { isa = PBXBuildFile; fileRef = 000000000000000000000069; };
+		00000000000000000000006A = { isa = PBXFileReference; lastKnownFileType = audio.wav; path = "start.wav"; sourceTree = "<group>"; };
+		0000000000000000000000CE = { isa = PBXBuildFile; fileRef = 00000000000000000000006A; };
+		00000000000000000000006B = { isa = PBXFileReference; lastKnownFileType = audio.wav; path = "star.wav"; sourceTree = "<group>"; };
+		0000000000000000000000CF = { isa = PBXBuildFile; fileRef = 00000000000000000000006B; };
+		00000000000000000000006C = { isa = PBXFileReference; lastKnownFileType = audio.wav; path = "hit.wav"; sourceTree = "<group>"; };
+		0000000000000000000000D0 = { isa = PBXBuildFile; fileRef = 00000000000000000000006C; };
+		00000000000000000000006D = { isa = PBXFileReference; lastKnownFileType = audio.wav; path = "gameOver.wav"; sourceTree = "<group>"; };
+		0000000000000000000000D1 = { isa = PBXBuildFile; fileRef = 00000000000000000000006D; };
+		000000000000000000000078 = { isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		000000000000000000000079 = { isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarDrift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		00000000000000000000007A = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightUITests.swift; sourceTree = "<group>"; };
+		00000000000000000000007B = { isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarDriftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0000000000000000000000DE = { isa = PBXBuildFile; fileRef = 00000000000000000000007A; };
+		000000000000000000000001 = { isa = PBXGroup; children = (000000000000000000000002, 000000000000000000000004, 000000000000000000000003,); sourceTree = "<group>"; };
+		000000000000000000000002 = { isa = PBXGroup; children = (000000000000000000000064, 000000000000000000000065, 000000000000000000000066, 000000000000000000000067, 000000000000000000000068, 000000000000000000000069, 00000000000000000000006A, 00000000000000000000006B, 00000000000000000000006C, 00000000000000000000006D, 000000000000000000000078,); path = StarDrift; sourceTree = "<group>"; };
+		000000000000000000000003 = { isa = PBXGroup; children = (000000000000000000000079, 00000000000000000000007B,); name = Products; sourceTree = "<group>"; };
+		000000000000000000000004 = { isa = PBXGroup; children = (00000000000000000000007A,); path = StarDriftUITests; sourceTree = "<group>"; };
+		00000000000000000000000A = { isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (0000000000000000000000C8, 0000000000000000000000C9, 0000000000000000000000CA, 0000000000000000000000CB,); runOnlyForDeploymentPostprocessing = 0; };
+		00000000000000000000000B = { isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (0000000000000000000000CC, 0000000000000000000000CD, 0000000000000000000000CE, 0000000000000000000000CF, 0000000000000000000000D0, 0000000000000000000000D1,); runOnlyForDeploymentPostprocessing = 0; };
+		00000000000000000000000C = { isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		00000000000000000000000D = { isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (0000000000000000000000DE,); runOnlyForDeploymentPostprocessing = 0; };
+		00000000000000000000000E = { isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		00000000000000000000000F = { isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		000000000000000000000014 = { isa = PBXNativeTarget; buildConfigurationList = 000000000000000000000020; buildPhases = (00000000000000000000000A, 00000000000000000000000C, 00000000000000000000000B,); buildRules = (); dependencies = (); name = StarDrift; productName = StarDrift; productReference = 000000000000000000000079; productType = "com.apple.product-type.application"; };
+		000000000000000000000015 = { isa = PBXNativeTarget; buildConfigurationList = 000000000000000000000021; buildPhases = (00000000000000000000000D, 00000000000000000000000E, 00000000000000000000000F,); buildRules = (); dependencies = (000000000000000000000017,); name = StarDriftUITests; productName = StarDriftUITests; productReference = 00000000000000000000007B; productType = "com.apple.product-type.bundle.ui-testing"; };
+		000000000000000000000016 = { isa = PBXContainerItemProxy; containerPortal = 00000000000000000000001E; proxyType = 1; remoteGlobalIDString = 000000000000000000000014; remoteInfo = StarDrift; };
+		000000000000000000000017 = { isa = PBXTargetDependency; target = 000000000000000000000014; targetProxy = 000000000000000000000016; };
+		00000000000000000000001E = { isa = PBXProject; attributes = { BuildIndependentTargetsInParallel = YES; LastUpgradeCheck = 1600; TargetAttributes = { 000000000000000000000014 = { CreatedOnToolsVersion = 16.0; ProvisioningStyle = Automatic; }; 000000000000000000000015 = { CreatedOnToolsVersion = 16.0; ProvisioningStyle = Automatic; TestTargetID = 000000000000000000000014; }; }; }; buildConfigurationList = 00000000000000000000001F; compatibilityVersion = "Xcode 14.0"; developmentRegion = ru; hasScannedForEncodings = 0; knownRegions = (ru, Base,); mainGroup = 000000000000000000000001; productRefGroup = 000000000000000000000003; projectDirPath = ""; projectRoot = ""; targets = (000000000000000000000014, 000000000000000000000015,); };
+		00000000000000000000001F = { isa = XCConfigurationList; buildConfigurations = (000000000000000000000028, 000000000000000000000029,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		000000000000000000000020 = { isa = XCConfigurationList; buildConfigurations = (00000000000000000000002A, 00000000000000000000002B,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		000000000000000000000021 = { isa = XCConfigurationList; buildConfigurations = (00000000000000000000002C, 00000000000000000000002D,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		000000000000000000000028 = { isa = XCBuildConfiguration; buildSettings = { CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; IPHONEOS_DEPLOYMENT_TARGET = 17.0; SDKROOT = iphoneos; SWIFT_VERSION = 5.0; SWIFT_STRICT_CONCURRENCY = minimal; DEBUG_INFORMATION_FORMAT = dwarf; ENABLE_TESTABILITY = YES; GCC_OPTIMIZATION_LEVEL = 0; SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG; SWIFT_OPTIMIZATION_LEVEL = "-Onone"; }; name = Debug; };
+		000000000000000000000029 = { isa = XCBuildConfiguration; buildSettings = { CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; IPHONEOS_DEPLOYMENT_TARGET = 17.0; SDKROOT = iphoneos; SWIFT_VERSION = 5.0; SWIFT_STRICT_CONCURRENCY = minimal; DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym"; SWIFT_COMPILATION_MODE = wholemodule; SWIFT_OPTIMIZATION_LEVEL = "-O"; VALIDATE_PRODUCT = YES; }; name = Release; };
+		00000000000000000000002A = { isa = XCBuildConfiguration; buildSettings = { ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; DEVELOPMENT_TEAM = ""; ENABLE_PREVIEWS = YES; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = StarDrift/Info.plist; LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks",); MARKETING_VERSION = 1.0; PRODUCT_BUNDLE_IDENTIFIER = com.example.StarDrift; PRODUCT_NAME = "$(TARGET_NAME)"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SUPPORTS_MACCATALYST = NO; SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO; SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO; SWIFT_EMIT_LOC_STRINGS = YES; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Debug; };
+		00000000000000000000002B = { isa = XCBuildConfiguration; buildSettings = { ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; DEVELOPMENT_TEAM = ""; ENABLE_PREVIEWS = YES; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = StarDrift/Info.plist; LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks",); MARKETING_VERSION = 1.0; PRODUCT_BUNDLE_IDENTIFIER = com.example.StarDrift; PRODUCT_NAME = "$(TARGET_NAME)"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SUPPORTS_MACCATALYST = NO; SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO; SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO; SWIFT_EMIT_LOC_STRINGS = YES; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Release; };
+		00000000000000000000002C = { isa = XCBuildConfiguration; buildSettings = { CODE_SIGN_STYLE = Automatic; DEVELOPMENT_TEAM = ""; GENERATE_INFOPLIST_FILE = YES; LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@loader_path/Frameworks",); PRODUCT_BUNDLE_IDENTIFIER = com.example.StarDrift.UITests; PRODUCT_NAME = "$(TARGET_NAME)"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SUPPORTS_MACCATALYST = NO; TARGETED_DEVICE_FAMILY = "1,2"; TEST_TARGET_NAME = StarDrift; }; name = Debug; };
+		00000000000000000000002D = { isa = XCBuildConfiguration; buildSettings = { CODE_SIGN_STYLE = Automatic; DEVELOPMENT_TEAM = ""; GENERATE_INFOPLIST_FILE = YES; LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@loader_path/Frameworks",); PRODUCT_BUNDLE_IDENTIFIER = com.example.StarDrift.UITests; PRODUCT_NAME = "$(TARGET_NAME)"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SUPPORTS_MACCATALYST = NO; TARGETED_DEVICE_FAMILY = "1,2"; TEST_TARGET_NAME = StarDrift; }; name = Release; };
+	};
+	rootObject = 00000000000000000000001E;
+}

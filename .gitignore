@@ -1,0 +1,12 @@
+.DS_Store
+build/
+DerivedData/
+build-tests/
+StarDrift-Simulator.zip
+*.xcuserstate
+xcuserdata/
+*.ipa
+*.p12
+*.mobileprovision
+*.p8
+ExportOptions.local.plist
